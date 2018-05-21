@@ -1,0 +1,237 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="Keywords" content="" />
+    <meta name="descriotion" content="" />
+    <title>学生申请资助</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <style>
+        .locationWrap {
+            background: #FFF;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            color: #898989;
+            margin: 0 0 0 15px;
+        }
+        .tableWrap .tableTop {
+            height: 32px;
+            overflow: hidden;
+            border: #CCBEA9 1px solid;
+        }
+        .mainWrap {
+            padding: 10px;
+            overflow: hidden;
+            margin: 4px 14px 0 14px;
+        }
+        .tableWrap {
+            background: #FFF;
+            margin: -11px 10px 0 -11px;
+            border-top: #CCBEA9 1px solid;
+            border-left: #CCBEA9 1px solid;
+        }
+        .rowWrap {
+            position: relative;
+            height: 30px;
+            padding: 20px 0;
+            background: #FFF;
+            border-top: 0;
+        }
+        .tableTop .tableTitle{
+            font-size: 13px;
+            margin: 9px 0 0 9px;
+            font-weight: bold;
+        }
+        .rowWrap.rowWrap1{
+            width: 100%;
+            height: 80px;
+            border-top: #CCBEA9 1px solid;
+            border-left: #CCBEA9 1px solid;
+            border-right: #CCBEA9 1px solid;
+            border-bottom: #CCBEA9 1px solid;
+            margin: -1px -11px 0 -10px;
+        }
+        .rowWrap.rowWrap1 .input-wrap{
+            margin: -23px 0 0 116px;
+        }
+        .widget{
+            margin: 11px 0 0 25px;
+        }
+        .rowWrap.rowWrap1 .widget-tip{
+            margin: 0 0 0 0px;
+        }
+        .rowWrap1 .submitBtn{
+            float: left;
+        }
+        .is_select select{
+            margin: 0 0 0 199px;
+        }
+        .is_select input{
+            position: absolute;
+            left: 140px;
+            top: 27px;
+        }
+    </style>
+</head>
+<body>
+<!--修改密码 -->
+<div>
+    <section class="locationWrap">
+        <p class="location">您的当前位置&nbsp;&nbsp;&nbsp;：&nbsp;资助申请</p>
+    </section>
+    <section class="mainWrap">
+        <section class="tableWrap">
+            <div class="tableTop tableTop">
+                <h1 class="tableTitle">助学金申请（温馨提示：含有下拉列表的申请项点击选择即可，无需添加）</h1>
+            </div>
+        </section>
+        <form id="apply_for" action="" method="post">
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget"> <span class="widget-tip">姓名&nbsp;&nbsp;：</span>
+                        <section class="input-wrap">
+                            <input type="text" class="text"  name="username"  placeholder="请输入姓名">
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget"> <span class="widget-tip">学号&nbsp;&nbsp;：</span>
+                        <section class="input-wrap">
+                            <input type="number" class="text"  name="stu_number"  maxlength="11" placeholder="请输入学号">
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget"> <span class="widget-tip">班级：</span>
+                        <section class="input-wrap">
+                            <input type="text" class="text" name="stu_class" value="14级软件工程4班">
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget is_select bookbuilding"> <span class="widget-tip">建档立卡家庭：</span>
+                        <input type="text" class="text" name="jdlk" value="是">
+                        <section class="input-wrap">
+                            <select name="" id="jdlk">
+                                <option value="是">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget is_select divorce"> <span class="widget-tip">父母离异：</span>
+                        <input type="text" class="text" name="parent_divorce" value="否">
+                        <section class="input-wrap">
+                             <select name="select_divorce" id="">
+                                <option value="是">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget is_select dead"> <span class="widget-tip">父母亡故：</span>
+                        <input type="text" class="text"  name="parent_dead" value="否">
+                        <section class="input-wrap">
+                             <select name="select_active" id="">
+                                <option value="是">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget is_select disability"> <span class="widget-tip">残疾：</span>
+                        <input type="text" class="text" name="disability" value="否">
+                        <section class="input-wrap">
+                             <select name="select_status" id="">
+                                <option value="是">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget is_select orphan"> <span class="widget-tip">孤儿：</span>
+                        <input type="text" class="text"  name="orphan" value="否">
+                        <section class="input-wrap">
+                             <select name="is_orphan" id="">
+                                <option value="是">是</option>
+                                <option value="否">否</option>
+                            </select>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget is_select low_income"> <span class="widget-tip">低保：</span>
+                        <input type="text" class="text" name="low_income" value="有">
+                        <section class="input-wrap">
+                             <select name="is_low_income">
+                                <option value="有">有</option>
+                                <option value="无">无</option>
+                            </select>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget">
+                        <input type="submit" value="提  交  申  请"  style="float:left;">
+                    </section>
+                </section>
+            </section>
+        </form>
+    </section>
+</div>
+<!--js文件-->
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        //建档立卡家庭
+        $(".bookbuilding select").blur(function(){
+            $(this).parent().prev().val($(this).val());
+        });
+        //父母离异
+        $(".divorce select").blur(function(){
+            $(this).parent().prev().val($(this).val());
+        });
+        //亡故
+        $(".dead select").blur(function(){
+            $(this).parent().prev().val($(this).val());
+        });
+        //残疾
+        $(".disability select").blur(function(){
+            $(this).parent().prev().val($(this).val());
+        });
+        //孤儿
+        $(".orphan select").blur(function(){
+            $(this).parent().prev().val($(this).val());
+        });
+        //低保
+        $(".low_income select").blur(function(){
+            $(this).parent().prev().val($(this).val());
+        });
+    });
+</script>
+</body>
+</html>

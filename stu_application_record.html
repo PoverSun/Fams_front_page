@@ -1,0 +1,145 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="Keywords" content="" />
+    <meta name="descriotion" content="" />
+    <title>资助申请记录</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <style>
+        .locationWrap { background:#FFF; height:40px; line-height:40px; overflow:hidden; color:#898989; }
+        .locationWrap .location { float:left; height:40px; line-height:40px; padding-left:20px; }
+        .locationWrap .location a,
+        .locationWrap .location a:active
+        .locationWrap .location a:visited { color:#898989; }
+        .locationWrap .location a:hover { text-decoration:underline; }
+        .mainWrap { padding:10px; overflow:hidden; }
+        .tableWrap { background:#FFF; border-top:#CCBEA9 1px solid; }
+        .tableWrap .tableTop { height:32px; overflow:hidden; border-left:#CCBEA9 1px solid; border-right:#CCBEA9 1px solid; border-bottom:#CCBEA9 1px solid;}
+        .tableWrap .tableTop .addBtn { float:right; display:block; height:24px; line-height:24px; margin:4px 4px 0 0; padding:0 10px 0 33px; background:#F0EBE3 url(../images/ico.gif) no-repeat 10px -145px; color:#6A3906; cursor:pointer; }
+        .tableWrap .tableTop_center { text-align:center; border-bottom:#CCBEA9 1px solid; }
+        .tableWrap .tableTop_center .tableTitle { float:none; }
+        .tableWrap .table { width:100%; color:#6A3906; border-collapse:collapse; }
+        .tableWrap .table th { height:32px; text-align:center; background:#EFEFEF; border:#CCBEA9 1px solid; }
+        .tableWrap .table td { height:32px; padding:0 10px; text-align:center; background:#FFF; border:#CCBEA9 1px solid; }
+        .tableWrap .table tr.odd td { background:#EFEFEF; }
+        .tableWrap .table .textShow { line-height:32px; }
+        .tableWrap .table .delBtn { float:left; display:block; _display:inline; width:14px; height:13px; margin-left:15px; background:url(../images/ico.gif) no-repeat 0 -250px; cursor:pointer; }
+        .tableWrap .table .updBtn { float:left; display:block; _display:inline; width:14px; height:13px; margin-left:20px; background:url(../images/ico.gif) no-repeat 0 -200px; cursor:pointer; }
+        .tableWrap .table .inputText { display:none; width:100%; height:16px; line-height:16px; padding:6px 0; border:0; background:none; text-indent:10px; }
+        .tableWrap .table tr.updTr .textShow { display:none; }
+        .tableWrap .table tr.updTr .inputText { display:block; }
+        .pagingWrap { float:right; height:26px; margin-top:10px; background:#FFF; border:#CCBEA9 1px solid; overflow:hidden; }
+        .pagingWrap a,
+        .pagingWrap a:active,
+        .pagingWrap a:visited { float:left; display:block; height:26px; line-height:26px; padding:0 8px; color:#6A3906; }
+        .pagingWrap a:hover,
+        .pagingWrap a.pageCur { background:#CCBEA9; }
+        .pagingWrap a.pageNum { padding:0 10px; }
+        .pagingWrap a.pageFirst,
+        .pagingWrap a.pagePrev { border-right:#CCBEA9 1px solid; }
+        .pagingWrap a.pageNext,
+        .pagingWrap a.pageLast { border-left:#CCBEA9 1px solid; }
+        .widget span{
+            float: left;
+            margin: 2px 15px 0 0;
+        }
+        .widget .input-wrap{
+            float: left;
+            margin:0 15px 0 0;
+        }
+        .widget .submitBtn{
+            float: left;
+        }
+        .widget{
+            line-height: 30px;
+        }
+        .rowWrap .widget {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 30px;
+            line-height: 18px;
+            margin: 19px 0 0 13px;
+        }
+        .rowWrap .rowInner {
+            position: relative;
+            float: left;
+            height: 66px;
+            width: 30%;
+            border: #CCBEA9 1px solid;
+        }
+        .tableWrap .table {
+            width: 100%;
+            color: #6A3906;
+            border-collapse: collapse;
+        }
+        .tableTop .tableTitle{
+            font-size: 16px;
+            margin: 6px 0 0 11px;
+        }
+    </style>
+</head>
+<body>
+<!--资助申请记录 -->
+<div>
+    <section class="locationWrap">
+        <p class="location">您的当前位置&nbsp;&nbsp;&nbsp;：&nbsp; 助学申请记录</p>
+    </section>
+    <section class="mainWrap">
+        <section class="tableWrap">
+            <div class="tableTop">
+                <h1 class="tableTitle">助学申请记录</h1>
+            </div>
+            <form action="shenqingjilu" id="searchForm" method="post">
+                <section class="rowWrap rowWrap1" style="width:100%">
+                    <section class="rowInner" style="width:100%">
+                        <section class="widget">
+                            <span class="widget-tip">批次名称</span>
+                            <section class="input-wrap">
+                                <input type="text" class="input-text" id="piciname" name="piciname" maxlength="25" placeholder="批次名称..." onblur="this.value=this.value.replace(/(\s*$)/g, '')">
+                            </section>
+                            <input type="submit" value="查询" class="submitBtn" style="margin-left:10px">
+                        </section>
+                    </section>
+                </section>
+            </form>
+            <table class="table">
+                <tbody>
+                <tr class="thead">
+                    <th>学年</th>
+                    <th>申请类型</th>
+                    <th>辅导员审核状态</th>
+                    <th>资助管理中心审核状态</th>
+                    <th>是否获得</th>
+                    <th width="250">操作</th>
+                </tr>
+                <tr>
+                    <td>2015-2016学年</td>
+                    <td>助学金</td>
+                    <td>通过</td>
+                    <td>进行中。。。</td>
+                    <td>否</td>
+                    <td>查看</td>
+                </tr>
+                <tr>
+                    <td>2015-2016学年</td>
+                    <td>奖学金</td>
+                    <td>通过</td>
+                    <td>不通过</td>
+                    <td>否</td>
+                    <td>查看</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="pagingWrap">
+            <p class="page"><a href="#" class="pageFirst pageCur">首页</a><a class="pagePrev pageCur" href="#">上一页</a><a href="#" class="pageNum pageCur">1</a><a class="pageNext pageCur" href="#">下一页</a><a class="pageLast pageCur" href="#">最后一页</a></p>
+        </section>
+    </section>
+</div>
+<!--js文件-->
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="all"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/bootstrap-datetimepicker.min.css">
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row row-nav-top">
+			<div class="col-sm-4 nav">
+				<p class="info"><img src="static/images/logo.png" alt=""></p>
+				<ul id="school-motto">
+					<li class="motto-li first-li">尚德</li>
+					<li class="motto-li">勤学</li>
+					<li class="motto-li">求是</li>
+					<li>创新</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 登录盒子-->
+		<div class="login-box">
+			<p id="login-title">奖助学金管理系统</p>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-list-alt"></span>
+				<select name="" id="select-user" class="form-control">
+					<option value="works">资助中心工作人员</option>
+					<option value="1">辅导员</option>
+					<option value="students">学生</option>
+				</select>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"></span>
+			    <input type="text" id="username" class="form-control" placeholder="请输入用户名">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span>
+			    <input type="password" id="password" class="form-control" placeholder="请输入密码">
+			</div>
+			<div class="input-group captcha-group">
+			    <input type="text" class="form-control" placeholder="请输入验证码" id="captcha-input">
+			    <span class="input-group-addon" id="captcha">Fd4s</span>
+			</div>
+			<div class="input-group">
+				<button class="btn btn-primary btn-block" id="submit-login-btn">登录</button>
+			</div>
+			<div class="input-group regist-forget-pwd">
+				<a href="javascript:void(0);" class="to-regist-btn" id="to-regist-btn">点我进行注册</a>
+				<a href="javascript:void(0);" class="forget" id="forget-pwd-btn">忘记密码？</a>
+			</div>
+		</div>
+		<div class="regist-box hidden">
+			<p style="text-align: center;font-size: 23px;line-height: 60px">奖助学金管理系统账号注册</p>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"></span>
+			    <input type="text" class="form-control" placeholder="请输入学号">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-envelope"></span>
+			    <input type="email" class="form-control" placeholder="请输入邮箱">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span>
+			    <input type="password" name="password" class="form-control" placeholder="请输入密码">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span>
+			    <input type="password" name="repeat-password" class="form-control" placeholder="请再次输入密码">
+			</div>
+			<div class="input-group">
+				<button class="btn btn-primary regist-btn">注册</button>
+				<button class="btn btn-success reload-login" id="reload-login">返回登录</button>
+			</div>
+		</div>
+		<div class="forget-pwd-box hidden">
+			<p style="text-align: center;font-size: 28px;line-height: 60px;">找回密码</p>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"></span>
+			    <input type="text" class="form-control" placeholder="请输入学号">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-envelope"></span>
+			    <input type="email" class="form-control" placeholder="请输入邮箱">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span>
+			    <input type="password" name="password" class="form-control" placeholder="请输入新密码">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"></span>
+			    <input type="password" name="repeat-password" class="form-control" placeholder="请再次输入密码">
+			</div>
+			<div class="input-group">
+				<button class="btn btn-default regist-submit">确认</button>
+				<button class="btn btn-success reload-login" id="reload-login-btn">返回登录</button>
+			</div>
+		</div>
+	</div>
+	<script src="static/js/login.js"></script>
+</body>
+</html>

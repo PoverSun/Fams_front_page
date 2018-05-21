@@ -1,0 +1,142 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="Keywords" content="" />
+    <meta name="descriotion" content="" />
+    <title>修改密码</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <style>
+        .locationWrap {
+            background: #FFF;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            color: #898989;
+            margin: 0 0 0 15px;
+        }
+        .tableWrap .tableTop {
+            height: 32px;
+            overflow: hidden;
+            border: #CCBEA9 1px solid;
+        }
+        .mainWrap {
+            padding: 10px;
+            overflow: hidden;
+            margin: 4px 14px 0 14px;
+        }
+        .tableWrap {
+            background: #FFF;
+            margin: -11px 10px 0 -11px;
+            border-top: #CCBEA9 1px solid;
+            border-left: #CCBEA9 1px solid;
+        }
+        .rowWrap {
+            position: relative;
+            height: 30px;
+            padding: 20px 0;
+            background: #FFF;
+            border-top: 0;
+        }
+        .tableTop .tableTitle{
+            font-size: 13px;
+            margin: 9px 0 0 9px;
+            font-weight: bold;
+        }
+        .rowWrap.rowWrap1{
+            width: 100%;
+            height: 80px;
+            border-top: #CCBEA9 1px solid;
+            border-left: #CCBEA9 1px solid;
+            border-right: #CCBEA9 1px solid;
+            border-bottom: #CCBEA9 1px solid;
+            margin: -1px -11px 0 -10px;
+        }
+        .rowWrap.rowWrap1 .input-wrap{
+            margin: -23px 0 0 116px;
+        }
+        .widget{
+            margin: 11px 0 0 25px;
+        }
+        .rowWrap.rowWrap1 .widget-tip{
+            margin: 0 0 0 0px;
+        }
+        .rowWrap1 .submitBtn{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--修改密码 -->
+<div>
+    <section class="locationWrap">
+        <p class="location">您的当前位置&nbsp;&nbsp;&nbsp;：&nbsp;密码修改</p>
+    </section>
+    <section class="mainWrap">
+        <section class="tableWrap">
+            <div class="tableTop tableTop">
+                <h1 class="tableTitle">密码修改</h1>
+            </div>
+        </section>
+        <form id="studentpwdFrom" action="studentpwdSave" method="post">
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget"> <span class="widget-tip">原密码&nbsp;&nbsp;：</span>
+                        <section class="input-wrap">
+                            <input type="password" class="text"  name="xsuser.mima" maxlength="20" placeholder="请输入原密码...">
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget"> <span class="widget-tip">新密码&nbsp;&nbsp;：</span>
+                        <section class="input-wrap">
+                            <input type="password" class="text" id="mima" name="xsuser.mima" maxlength="20" placeholder="请输入新密码...">
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget"> <span class="widget-tip">再次输入：</span>
+                        <section class="input-wrap">
+                            <input type="password" class="text" id="mimaAgain" name="mimaAgain" maxlength="20" placeholder="请再次输入新密码...">
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="rowWrap rowWrap1">
+                <section class="rowInner">
+                    <section class="widget">
+                        <input type="hidden" name="xsuser.username" value="0">
+                        <input type="button" value="提  交" class="btn btn-primary submitBtn"  style="float:left;">
+                    </section>
+                </section>
+            </section>
+        </form>
+    </section>
+</div>
+<!--js文件-->
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script>
+    $(document).on('click',"#reset_pwd_btn",function () {
+        var old_password = $("#old_password").val();
+        var new_password = $("#new_password").val();
+        var repeat_password = $("#repeat_password").val();
+        if(old_password === '' || old_password === null){
+            alert("原密码不能为空！");
+        }else  if(old_password === '' || old_password === null){
+            alert("新密码不能为空！");
+        }else if(repeat_password === '' || repeat_password === null){
+            alert("确认密码不能为空！");
+        }else if(repeat_password !== new_password){
+            alert("两次密码输入不一致，请重新输入！");
+        }else{
+            alert("恭喜你，密码修改成功！");
+        }
+    });
+</script>
+</body>
+</html>

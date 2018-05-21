@@ -1,0 +1,127 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="Keywords" content="" />
+    <meta name="descriotion" content="" />
+    <title>奖学金获得者</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <style>
+        table.scholarship_gainer_table{  width: 900px;  height: 180px;  margin: 26px 0 0 44px;  }
+        table tbody .first-tr{  background: #f5f5f5;  }
+        .locationWrap { background:#FFF; height:40px; line-height:40px; overflow:hidden; color:#898989; }
+        .locationWrap .location { float:left; height:40px; line-height:40px; padding-left:20px; }
+        .locationWrap .location a,
+        .locationWrap .location a:active
+        .locationWrap .location a:visited { color:#898989; }
+        .locationWrap .location a:hover { text-decoration:underline; }
+        .page-divide{width: 354px; margin: 0 0 0 44px;}
+        table thead tr th{  text-align: center;  }
+        table tbody tr td{  text-align: center;  }
+        .row{width: 520px;margin: 0 auto;}
+        .row .col-sm-12{margin-bottom: 10px;}
+        .col-sm-4.form-control{width: 150px;margin-right:35px }
+        .form-control{width: 94px;}
+        span.col-sm-3{margin: 4px 21px;}
+        .submit_btn{width: 105px;height: 34px;border-radius: 6px;color: #333;  background-color: #fff;  border-color: #ccc;}
+        .close_btn{width: 50px;height: 34px;border-radius: 6px;color: #333;  background-color: #fff;  border-color: #ccc;}
+        h4 span{font-size: 15px; color: #2fd633;}
+    </style>
+</head>
+<body>
+<!-- 学生个人信息 -->
+<div>
+    <section class="locationWrap">
+        <p class="location">您的当前位置&nbsp;&nbsp;&nbsp;：&nbsp; 奖学金名单详情</p>
+    </section>
+    <table class="table table-hover table-bordered scholarship_gainer_table">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>班级</th>
+            <th>综合成绩</th>
+            <th>排名</th>
+            <th>是否获得初审资格</th>
+            <th>审核结果</th>
+            <th>是否获得奖学金</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--学生信息-->
+        <tr class="first-tr">
+            <td></td><td></td><td></td><td></td><td></td><td></td><td>通过审核（辅导员）</td><td><span>未审核</span>&nbsp;&nbsp;<span><a
+                href="javascript:void(0);" class="check_btn">进行审核</a></span></td><td>是</td>
+        </tr>
+        </tbody>
+    </table>
+     <!--分页-->
+    <div class="page-divide" data-example-id="disabled-active-pagination">
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--js文件-->
+<!--奖学金审批界面-start-->
+<div class="modal fade" tabindex="-1" role="dialog" id="scholarship_check">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">奖学金审批 <span>（*温馨提示：点击右侧下拉列表选择后点击空白部分即可）</span></h4>
+            </div>
+            <form action="">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span class="col-sm-3">学号</span>
+                            <input type="number" class="col-sm-4 form-control" id="stu_number" readonly="readonly">
+                        </div>
+                        <div class="col-sm-12">
+                            <span class="col-sm-3">初审结果</span>
+                            <input type="text" class="col-sm-4 form-control" id="first_check" value="通过" readonly="readonly">
+                        </div>
+                        <div class="col-sm-12">
+                            <span class="col-sm-3">资助中心审核</span>
+                            <input type="text" class="col-sm-4 form-control" name="is_pass" value="通过">
+                            <select name="select_pass" id="select_pass" class="col-sm-2 form-control">
+                                <option value="通过">通过</option>
+                                <option value="不通过">不通过</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close_btn" data-dismiss="modal">关闭</button>
+                    <input type="submit" class="submit_btn" value="提交审批结果">
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--奖学金审批界面-end-->
+
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $(".check_btn").on("click",function () {
+            $("#scholarship_check").modal('show');
+        });
+        $("#select_pass").blur(function(){
+            $(this).prev().val($(this).val());
+        });
+    });
+</script>
+</body>
+</html>

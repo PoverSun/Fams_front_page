@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码</title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /*修改密码*/
+        .update-pwd-box-instructor{
+            width: 430px;
+            margin: 32px auto;
+            border: 1px solid #5e5e5e38;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .update-pwd-h1{
+            text-align: center;
+            font-size: 25px;
+            line-height: 20px;
+            margin-top: 32px;
+        }
+        .raw-pwd{
+            margin: 35px 0 0 74px;
+        }
+        .reset-pwd-box{
+            width: 136px;
+            margin: 0 0 34px 73px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 表格信息版块-start -->
+    <div class="comprehensive assessment">
+        <table class="table table-bordered" id="evaluation">
+            <div class="update-pwd-box-instructor">
+                <h3 class="update-pwd-h1">修改密码</h3><div class="form-group raw-pwd">
+                <div class="input-group">
+                    <label class="default">请输入原密码</label>
+                    <input type="password" class="form-control" placeholder="请输入原密码" id="old_password">
+                </div>
+            </div>
+                <div class="form-group  raw-pwd">
+                    <div class="input-group"
+                    <label class="default">请输入新密码</label>
+                    <input type="password" class="form-control" placeholder="请输入新密码" id="new_password">
+                </div>
+            </div>
+            <div class="form-group  raw-pwd">
+                <div class="input-group">
+                    <label class="default">请确认新密码</label>
+                    <input type="password" class="form-control" placeholder="请确认新密码" id="repeat_password">
+                </div>
+            </div>
+            <div class="form-group  raw-pwd">
+                <div class="input-group reset-pwd-box">
+                    <button type="submit" class="btn btn-primary btn-block" id="submit">确认修改</button>
+                </div>
+            </div>
+        </table>
+    </div>
+    <!--js文件-->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script>
+        $(document).on('click','#submit',function(){
+            var old_password = $("#old_password").val();
+            var new_password = $("#new_password").val();
+            var repeat_password = $("#repeat_password").val();
+            if(old_password === '' || old_password === null){
+                alert("原密码不能为空！");
+            }else  if(old_password === '' || old_password === null){
+                alert("新密码不能为空！");
+            }else if(repeat_password === '' || repeat_password === null){
+                alert("确认密码不能为空！");
+            }else if(repeat_password !== new_password){
+                alert("两次密码输入不一致，请重新输入！");
+            }else{
+                alert("恭喜你，密码修改成功！");
+            }
+        });
+    </script>
+</body>
+</html>

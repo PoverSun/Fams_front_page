@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="Keywords" content="" />
+    <meta name="descriotion" content="" />
+    <title>成绩</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <style>
+        .score-table{
+            width: 610px;
+            margin: 25px 0 0 25px;
+        }
+        .score-table thead th{
+            text-align: center;
+        }
+        .score-table tbody tr td{
+            text-align: center;
+        }
+         .locationWrap { background:#FFF; height:40px; line-height:40px; overflow:hidden; color:#898989; }
+        .locationWrap .location { float:left; height:40px; line-height:40px; padding-left:20px; }
+        .locationWrap .location a,
+        .locationWrap .location a:active
+        .locationWrap .location a:visited { color:#898989; }
+        .locationWrap .location a:hover { text-decoration:underline; }
+    </style>
+</head>
+<body>
+<!--成绩信息 -->
+<div>
+    <section class="locationWrap">
+        <p class="location">您的当前位置&nbsp;&nbsp;&nbsp;：&nbsp; 学生成绩信息</p>
+    </section>
+    <table class="table table-hover table-bordered score-table">
+        <thead>
+        <th>个人成绩</th><th>姓名</th><th>学号</th><th>课程成绩</th><th>德育成绩</th><th>平均</th><th>班级排名</th>
+        </thead>
+        <tbody>
+        <tr class="first-tr">
+            <td>详情</td>
+            <td>刘佳佳</td>
+            <td>12014246014</td>
+            <td>88.22</td>
+            <td>110</td>
+            <td>88</td>
+            <td>10</td>
+        </tr>
+    </table>
+</div>
+<!--js文件-->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>
